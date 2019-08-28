@@ -1,0 +1,30 @@
+img {
+    border: 20px solid black;
+}
+
+
+
+
+
+h1 {
+    background-color: lightskyblue;
+    border: 1px solid black;
+
+}
+
+
+h3 {
+    color: dodgerblue;
+    text-decoration: underline;
+
+}
+
+
+footer {
+    color: white;
+    background-color: black;
+    padding: 10px 40px;
+    border-top: lightskyblue groove;
+    border-bottom: lightskyblue groove;
+    border-width: 5px;
+}
