@@ -8,40 +8,38 @@
 
 
 
-if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+if(isset($_POST['name']) &&isset($_POST['user_email']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['title'])) {
 
     $name = $_POST['name'];
+    $user_email = $_POST['user_email'];
     $email = $_POST['email'];
+    $title = $_POST['title'];
     $message = $_POST['message'];
 
-    if(!empty($user_name) && !empty($email) && !empty($message)) {
-        if(strlen($name)>20 || strlen($email)>50 || strlen($message)>100) {
-            echo 'Sorry, maximum length for some field has been exceeded. ';
-        }
 
-        $to = 'ebuka@mailinator.com';
-        $subject = 'Contact form submitted.';
-        $body = $name."\n".$message;
-        $headers = 'From:'.$email;
 
-        if (@mail($to, $subject, $headers)) {
-            echo 'Thanks for contacting us. We\'ll be in touch soon.';
+
+
+        $to = $email;
+        $subject = $title;
+        $body = $message;
+        $headers = 'From:'.$user_email;
+
+        if (mail($to, $subject, $headers, $body)) {
+            echo 'Email has been sent to ' . $to;
 
         } else {
-            echo 'Sorry, an error occurred. Please try again later.';
+            echo 'There is an error sending the email.';
         }
 
     } else {
         echo 'All fields are required.';
     }
 
-}
+
 
 ?>
 
 <br>
 
-<a href="Chukwuebuka_E_Obi.html"></a>
-
-
-?>
+<a href="index.html"></a>
